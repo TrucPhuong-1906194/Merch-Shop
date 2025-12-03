@@ -400,7 +400,155 @@ header nav #nav-bar-head p{
 
 .iframe {
     display: block;
-    align-items: center;
-    margin: auto;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 560px; /* default desktop embed width */
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Responsive rules (mobile-first adjustments) */
+/* Tablet and up tweaks */
+@media (max-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+    }
+    .sidebar {
+        width: 220px;
+    }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 14px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    nav h1 {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    main {
+        flex-direction: column;
+        padding: 14px;
+    }
+    .content {
+        width: 100%;
+    }
+    .sidebar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 16px;
+        position: static;
+        top: auto;
+    }
+    section {
+        padding: 14px;
+    }
+    .product {
+        padding: 12px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 18px;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+    }
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+    .products {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .product {
+        padding: 12px;
+    }
+    .product img,
+    .carousel-item img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .product button,
+    #customer-form button,
+    .sidebar button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .cart-item img {
+        width: 40px;
+        height: 40px;
+    }
+    .transaction {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .dropdown-menu {
+        position: static;
+        top: auto;
+        left: auto;
+        box-shadow: none;
+        width: 100%;
+        border-radius: 6px;
+    }
+    .notification-popup {
+        max-width: 94%;
+        padding: 12px;
+    }
+    /* Make iframe fit small screens while maintaining aspect ratio */
+    .iframe {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+    #customer-form input,
+    #customer-form textarea {
+        width: 100%;
+    }
+    footer {
+        padding: 14px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    nav h1 p {
+        display: none; /* hide long title on very small screens to save space */
+    }
+    #logo-trang {
+        height: 44px;
+    }
+    nav h1 {
+        gap: 6px;
+    }
+    /* tighter iframe for very small devices */
+    .iframe {
+        max-width: 320px;
+        width: 94%;
+    }
 }
 
