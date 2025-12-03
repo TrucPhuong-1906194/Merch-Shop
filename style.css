@@ -89,7 +89,6 @@ main {
     /* margin: 5px 0; */
 }
 
-
 .cart-item img {
     width: 50px;
     height: 50px;
@@ -106,7 +105,6 @@ main {
     font-size: 16px;
     color: #38302E; 
 }
-
 
 /* Content chính */
 .content {
@@ -551,4 +549,3 @@ header nav #nav-bar-head p{
         width: 94%;
     }
 }
-
